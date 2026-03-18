@@ -80,5 +80,5 @@ Lỗi đã gặp:
 | **BVT_6** | Token cũ: `5`<br>Lùi giờ hệ thống: `- 1 giờ` | Token không đổi, khả dụng: `5` | ❌ **FAIL (Lỗi Time Drift)**<br>Token rớt thành số âm.<br>`BUG: Token bị ÂM (-3594999 ms)` |
 | **R10** | Cấp: `Premium`, Loại: `POST`<br>Thời gian chờ sát biên: `1.99s` | Trạng thái: `429` (Từ chối) | ❌ **FAIL (Trễ nhịp Sleep OS)**<br>Hệ thống tưởng đủ giờ và Duyệt trừ tiền luôn.<br>`Expected: 429`<br>`Actual: 200` |
 
-*(Sau khi phát hiện 2 bản ghi đỏ trên, tôi đã áp dụng hàm `Math.Max` để chặn số âm cho `BVT_6`, đồng thời nới rộng khoảng cách "Dưới biên" và tăng sai lệch so sánh cho nhóm `R10`, đem tất cả trở lại trạng thái Xanh Passing ở bảng mục 1).*
+*(Sau khi phát hiện 2 bản ghi đỏ trên, em đã áp dụng hàm `Math.Max` để chặn số âm cho `BVT_6`, đồng thời nới rộng khoảng cách "Dưới biên" và tăng sai lệch khi so sánh kết quả`, và tất cả trở lại trạng thái Xanh Passing ở bảng mục 1).*
 
