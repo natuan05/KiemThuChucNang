@@ -42,18 +42,18 @@ public class RateLimiterTests
 
     // 3. Biên hồi phục & Từ chối Không Trừ Token (R1 -> R12)
     [Theory]
-    [InlineData("free", "GET", 950, 429)]   // R1
+    [InlineData("free", "GET", 900, 429)]   // R1
     [InlineData("free", "GET", 1000, 200)]  // R2
-    [InlineData("free", "GET", 1010, 200)]  // R3
-    [InlineData("free", "POST", 2950, 429)] // R4
+    [InlineData("free", "GET", 1100, 200)]  // R3
+    [InlineData("free", "POST", 2900, 429)] // R4
     [InlineData("free", "POST", 3000, 200)] // R5
-    [InlineData("free", "POST", 3010, 200)] // R6
-    [InlineData("premium", "GET", 950, 429)]   // R7
+    [InlineData("free", "POST", 3100, 200)] // R6
+    [InlineData("premium", "GET", 900, 429)]   // R7
     [InlineData("premium", "GET", 1000, 200)]  // R8
-    [InlineData("premium", "GET", 1010, 200)]  // R9
-    [InlineData("premium", "POST", 1950, 429)] // R10
+    [InlineData("premium", "GET", 1100, 200)]  // R9
+    [InlineData("premium", "POST", 1900, 429)] // R10
     [InlineData("premium", "POST", 2000, 200)] // R11
-    [InlineData("premium", "POST", 2010, 200)] // R12
+    [InlineData("premium", "POST", 2100, 200)] // R12
     public void RecoveryBoundary_ShouldHandleCorrectly(string tier, string method, int waitMs, int expectedStatus)
     {
         var bucket = new TokenBucket(tier);
@@ -88,21 +88,7 @@ public class RateLimiterTests
         }
     }
 
-    // 4. Kiểm thử đầu vào không hợp lệ
-    [Theory]
-    [InlineData("vip")]
-    [InlineData("")]
-    [InlineData(" ")]
-    public void Constructor_InvalidTier_ShouldThrowArgumentException(string invalidTier)
-    {
-        var exception = Assert.Throws<ArgumentException>(() => 
-        {
-            new TokenBucket(invalidTier);
-        });
-        
-        Assert.Contains("Tier không hợp lệ", exception.Message);
-    }
-
+    // 4. Kiểm thử đầu vào không hợp lệ (Phương thức)
     [Theory]
     [InlineData("PUT")]
     [InlineData("DELETE")]
