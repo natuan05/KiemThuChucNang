@@ -22,14 +22,14 @@ Quy tắc tính phí (Tham số đầu vào từ người dùng)
 
 **Kiểm thử biên**
 
-| **ID** | **Token cũ** | **Số giây trôi qua** | **Giá trị tính toán** | **Kết quả mong đợi (Token khả dụng)** | **Kết quả thực tế** |
-| --- | --- | --- | --- | --- | --- |
-| **BVT_1** | 0 | 0 | 0 | **0** | Token khả dụng: `0` |
-| **BVT_2** | 0 | 1 | 1 | **1** | Token khả dụng: `1` |
-| **BVT_3** | 8 | 1 | 9 | **9** | Token khả dụng: `9` |
-| **BVT_4** | 8 | 2 | 10 | **10** | Token khả dụng: `10` |
-| **BVT_5** | 8 | 5 | 13 | **10** | Token khả dụng: `10` |
-| **BVT_6** | 5 | -3600 | -3595 | **5** | Token khả dụng: `5` |
+| ID | Input | Expected Output | Actual Output |
+| --- | --- | --- | --- |
+| **BVT_1** | Token cũ: `0`, Trôi qua: `0s` | Token khả dụng: `0` | Token khả dụng: `0` |
+| **BVT_2** | Token cũ: `0`, Trôi qua: `1s` | Token khả dụng: `1` | Token khả dụng: `1` |
+| **BVT_3** | Token cũ: `8`, Trôi qua: `1s` | Token khả dụng: `9` | Token khả dụng: `9` |
+| **BVT_4** | Token cũ: `8`, Trôi qua: `2s` | Token khả dụng: `10` | Token khả dụng: `10` |
+| **BVT_5** | Token cũ: `8`, Trôi qua: `5s` | Token khả dụng: `10` | Token khả dụng: `10` |
+| **BVT_6** | Token cũ: `5`, Trôi qua: `-3600s` | Token khả dụng: `5` | Token khả dụng: `5` |
 
 | ID | Input | Expected Output | Actual Output |
 | --- | --- | --- | --- |
@@ -56,20 +56,20 @@ Quy tắc tính phí (Tham số đầu vào từ người dùng)
 
 **Đặt số token về 0, kết hợp bảng quyết định và các giá trị biên**
 
-| **Quy tắc (Rule)** | **Tier** | **Method** | **Thời gian chờ (t)** | **Kết quả mong đợi** | **Kết quả thực tế** |
-| --- | --- | --- | --- | --- | --- |
-| **R1 (Dưới biên)** | Free | GET | **0.9s** | **Từ chối (429), Tokens không đổi** | Trạng thái: `429`, Dư: `0.9 Token` |
-| **R2 (Tại biên)** | Free | GET | **1.00s** | **Duyệt (200), Tokens dư 0** | Trạng thái: `200`, Dư: `0 Token` |
-| **R3 (Trên biên)** | Free | GET | **1.1s** | **Duyệt (200), Tokens dư 0.1** | Trạng thái: `200`, Dư: `0.1 Token` |
-| **R4 (Dưới biên)** | Free | POST | **2.9s** | **Từ chối (429)** | Trạng thái: `429`, Dư: `2.9 Token` |
-| **R5 (Tại biên)** | Free | POST | **3.00s** | **Duyệt (200)** | Trạng thái: `200`, Dư: `0 Token` |
-| **R6 (Trên biên)** | Free | POST | **3.1s** | **Duyệt (200)** | Trạng thái: `200`, Dư: `0.1 Token` |
-| **R7 (Dưới biên)** | Premium | GET | **0.9s** | **Từ chối (429)** | Trạng thái: `429`, Dư: `0.9 Token` |
-| **R8 (Tại biên)** | Premium | GET | **1.00s** | **Duyệt (200)** | Trạng thái: `200`, Dư: `0 Token` |
-| **R9 (Trên biên)** | Premium | GET | **1.1s** | **Duyệt (200)** | Trạng thái: `200`, Dư: `0.1 Token` |
-| **R10 (Dưới biên)** | Premium | POST | **1.9s** | **Từ chối (429)** | Trạng thái: `429`, Dư: `1.9 Token` |
-| **R11 (Tại biên)** | Premium | POST | **2.00s** | **Duyệt (200)** | Trạng thái: `200`, Dư: `0 Token` |
-| **R12 (Trên biên)** | Premium | POST | **2.1s** | **Duyệt (200)** | Trạng thái: `200`, Dư: `0.1 Token` |
+| ID | Input | Expected Output | Actual Output |
+| --- | --- | --- | --- |
+| **R1** (Dưới biên) | Cấp: `Free`, Loại: `GET`, Chờ: `0.9s` | **Từ chối (429), Tokens không đổi** | Trạng thái: `429`, Dư: `0.9 Token` |
+| **R2** (Tại biên) | Cấp: `Free`, Loại: `GET`, Chờ: `1.00s` | **Duyệt (200), Tokens dư 0** | Trạng thái: `200`, Dư: `0 Token` |
+| **R3** (Trên biên) | Cấp: `Free`, Loại: `GET`, Chờ: `1.1s` | **Duyệt (200), Tokens dư 0.1** | Trạng thái: `200`, Dư: `0.1 Token` |
+| **R4** (Dưới biên) | Cấp: `Free`, Loại: `POST`, Chờ: `2.9s` | **Từ chối (429)** | Trạng thái: `429`, Dư: `2.9 Token` |
+| **R5** (Tại biên) | Cấp: `Free`, Loại: `POST`, Chờ: `3.00s` | **Duyệt (200)** | Trạng thái: `200`, Dư: `0 Token` |
+| **R6** (Trên biên) | Cấp: `Free`, Loại: `POST`, Chờ: `3.1s` | **Duyệt (200)** | Trạng thái: `200`, Dư: `0.1 Token` |
+| **R7** (Dưới biên) | Cấp: `Premium`, Loại: `GET`, Chờ: `0.9s` | **Từ chối (429)** | Trạng thái: `429`, Dư: `0.9 Token` |
+| **R8** (Tại biên) | Cấp: `Premium`, Loại: `GET`, Chờ: `1.00s` | **Duyệt (200)** | Trạng thái: `200`, Dư: `0 Token` |
+| **R9** (Trên biên) | Cấp: `Premium`, Loại: `GET`, Chờ: `1.1s` | **Duyệt (200)** | Trạng thái: `200`, Dư: `0.1 Token` |
+| **R10** (Dưới biên) | Cấp: `Premium`, Loại: `POST`, Chờ: `1.9s` | **Từ chối (429)** | Trạng thái: `429`, Dư: `1.9 Token` |
+| **R11** (Tại biên) | Cấp: `Premium`, Loại: `POST`, Chờ: `2.00s` | **Duyệt (200)** | Trạng thái: `200`, Dư: `0 Token` |
+| **R12** (Trên biên) | Cấp: `Premium`, Loại: `POST`, Chờ: `2.1s` | **Duyệt (200)** | Trạng thái: `200`, Dư: `0.1 Token` |
 
 **Báo cáo Tình trạng Lỗi và Khắc phục (Bug Tracking & Fixes)**
 
