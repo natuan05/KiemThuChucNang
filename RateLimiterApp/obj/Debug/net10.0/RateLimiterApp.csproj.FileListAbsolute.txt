@@ -1,0 +1,14 @@
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\bin\Debug\net10.0\RateLimiterApp.exe
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\bin\Debug\net10.0\RateLimiterApp.deps.json
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\bin\Debug\net10.0\RateLimiterApp.runtimeconfig.json
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\bin\Debug\net10.0\RateLimiterApp.dll
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\bin\Debug\net10.0\RateLimiterApp.pdb
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.GeneratedMSBuildEditorConfig.editorconfig
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.AssemblyInfoInputs.cache
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.AssemblyInfo.cs
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.csproj.CoreCompileInputs.cache
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.dll
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\refint\RateLimiterApp.dll
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.pdb
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.genruntimeconfig.cache
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\ref\RateLimiterApp.dll
