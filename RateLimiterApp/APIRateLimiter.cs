@@ -54,10 +54,11 @@ public class TokenBucket
     // Xử lý yêu cầu API — trả về 200 nếu đủ token, 429 nếu không
     public ApiResult CallApi(string method)
     {
-        method = method.ToUpper();
-        if (method != "GET" && method != "POST")
+        if (string.IsNullOrWhiteSpace(method) || (method.ToUpper() != "GET" && method.ToUpper() != "POST"))
             throw new ArgumentException(
                 $"Phương thức không hợp lệ: '{method}'. Chọn 'GET' hoặc 'POST'.");
+
+        method = method.ToUpper();
 
         Refill();
 

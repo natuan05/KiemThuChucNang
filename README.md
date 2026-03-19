@@ -33,11 +33,13 @@ Quy tắc tính phí (Tham số đầu vào từ người dùng)
 
 | ID | Input | Expected Output | Actual Output |
 | --- | --- | --- | --- |
-| 1 | Gọi API với Phương thức: `"PUT"` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
-| 2 | Gọi API với Phương thức: `"DELETE"` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
-| 3 | Gọi API với Phương thức: `"PATCH"` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
-| 4 | Gọi API với Phương thức: `""` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
-| 5 | Gọi API với Phương thức: `" "` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
+| **INV_1** | Gọi API với Phương thức: `"PUT"` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
+| **INV_2** | Gọi API với Phương thức: `"DELETE"` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
+| **INV_3** | Dữ liệu biên - Chuỗi Rỗng (Length = 0): `""` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
+| **INV_4** | Dữ liệu biên - Có khoảng trắng (Length = 1): `" "` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
+| **INV_5** | Dữ liệu biên - Đối tượng NULL (Chưa khởi tạo) | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
+| **INV_6** | Đoán lỗi chính tả - Chuỗi tương tự: `"GETT"` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
+| **INV_7** | Nhập ký tự đặc biệt - Cố ý phá ứng dụng: `"123!@#"` | Lỗi `ArgumentException`: "Phương thức không hợp lệ" | Lỗi `ArgumentException` |
 
 **Bảng quyết định**
 
