@@ -90,13 +90,13 @@ public class RateLimiterTests
 
     // 4. Kiểm thử đầu vào không hợp lệ (Phương thức)
     [Theory]
-    [InlineData("PUT")]       // Một HTTP Method thông thường nhưng hệ thống không cấp phép
-    [InlineData("DELETE")]    // Tương tự
-    [InlineData("")]          // Biên chuỗi Rỗng (Length = 0)
-    [InlineData(" ")]         // Chuỗi chỉ có duy nhất whitespace (Length = 1)
-    [InlineData(null)]        // Boundary cực hạn: Đối tượng String Null (chưa khởi tạo)
-    [InlineData("GETT")]      // Lỗi chính tả
-    [InlineData("123!@#")]    // Kiểu gõ linh tinh, chứa ký tự đặc biệt và số
+    [InlineData("PUT")]       
+    [InlineData("DELETE")]    
+    [InlineData("")]          
+    [InlineData(" ")]         
+    [InlineData(null)]        
+    [InlineData("GETT")]      
+    [InlineData("123!@#")]    
     public void CallApi_InvalidMethod_ShouldThrowArgumentException(string invalidMethod)
     {
         var bucket = new TokenBucket("free");

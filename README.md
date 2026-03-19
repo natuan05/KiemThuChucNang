@@ -43,18 +43,21 @@ Quy tắc tính phí (Tham số đầu vào từ người dùng)
 
 **Bảng quyết định**
 
-|  |  | **R1** | **R2** | **R3** | **R4** | **R5** | **R6** | **R7** | **R8** | **R9** |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Điều kiện**  | **Loại tài khoản (T)** | free | free | free | free | premium | premium | premium | premium |  |
-|  | **Phương thức (M)** | GET | GET | POST | POST | GET | GET | POST | POST | Khác |
-|  | **Đủ Token tương ứng?** | Có | Không | Có | Không | Có | Không | Có | Không |  |
-| **Hành động** | **Duyệt (200 OK)** | **X** |  | **X** |  | **X** |  | **X** |  |  |
-|  | **Từ chối (429)** |  | **X** |  | **X** |  | **X** |  | **X** |  |
-|  | **Tokens không đổi** |  | **X** |  | **X** |  | **X** |  | **X** |  |
-|  | **Tokens - 1** | **X** |  |  |  | **X** |  |  |  |  |
-|  | **Tokens - 2** |  |  |  |  |  |  | **X** |  |  |
-|  | **Tokens - 3** |  |  | **X** |  |  |  |  |  |  |
-|  | **Báo input không hợp lệ** |  |  |  |  |  |  |  |  | **X** |
+| | Quy tắc / Rule | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 | R9 |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Điều kiện** | **C1: Request Method hợp lệ?** | T | T | T | T | T | T | T | T | F |
+| | **C2: Loại tài khoản là `Free`?** | T | T | T | T | F | F | F | F | \- |
+| | **C3: Loại tài khoản là `Premium`?**| F | F | F | F | T | T | T | T | \- |
+| | **C4: Phương thức là `GET`?** | T | T | F | F | T | T | F | F | \- |
+| | **C5: Phương thức là `POST`?** | F | F | T | T | F | F | T | T | \- |
+| | **C6: Token dư ≥ Chi phí?** | T | F | T | F | T | F | T | F | \- |
+| **Hành động** | **A1: Hệ thống Duyệt (200 OK)** | X | | X | | X | | X | | |
+| | **A2: Gửi Từ chối (429 Too Many)** | | X | | X | | X | | X | |
+| | **A3: Số dư Token giữ nguyên** | | X | | X | | X | | X | |
+| | **A4: Trừ tài khoản 1 Token** | X | | | | X | | | | |
+| | **A5: Trừ tài khoản 2 Token** | | | | | | | X | | |
+| | **A6: Trừ tài khoản 3 Token** | | | X | | | | | | |
+| | **A7: Văng lỗi ArgumentException** | | | | | | | | | X |
 
 **Đặt số token về 0, kết hợp bảng quyết định và các giá trị biên**
 
