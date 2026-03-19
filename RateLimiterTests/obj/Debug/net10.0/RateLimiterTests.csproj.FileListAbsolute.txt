@@ -101,3 +101,4 @@ d:\Kiểm Thử\KiemThuChucNang\RateLimiterTests\obj\Debug\net10.0\refint\RateLi
 d:\Kiểm Thử\KiemThuChucNang\RateLimiterTests\obj\Debug\net10.0\RateLimiterTests.pdb
 d:\Kiểm Thử\KiemThuChucNang\RateLimiterTests\obj\Debug\net10.0\RateLimiterTests.genruntimeconfig.cache
 d:\Kiểm Thử\KiemThuChucNang\RateLimiterTests\obj\Debug\net10.0\ref\RateLimiterTests.dll
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterTests\obj\Debug\net10.0\RateLimiterTests.sourcelink.json

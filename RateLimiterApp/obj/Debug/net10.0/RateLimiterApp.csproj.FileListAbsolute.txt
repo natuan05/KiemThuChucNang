@@ -12,3 +12,4 @@ d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\refint\RateLimi
 d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.pdb
 d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.genruntimeconfig.cache
 d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\ref\RateLimiterApp.dll
+d:\Kiểm Thử\KiemThuChucNang\RateLimiterApp\obj\Debug\net10.0\RateLimiterApp.sourcelink.json

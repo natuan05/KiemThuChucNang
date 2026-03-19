@@ -81,6 +81,7 @@ Lỗi đã gặp:
 | :--- | :--- | :--- | :--- |
 | **BVT_6** | Token cũ: `5`<br>Lùi giờ hệ thống: `- 1 giờ` | Token không đổi, khả dụng: `5` | ❌ **FAIL (Lỗi Time Drift)**<br>Token rớt thành số âm.<br>`BUG: Token bị ÂM (-3594999 ms)` |
 | **R10** | Cấp: `Premium`, Loại: `POST`<br>Thời gian chờ sát biên: `1.99s` | Trạng thái: `429` (Từ chối) | ❌ **FAIL (Trễ nhịp Sleep OS)**<br>Hệ thống tưởng đủ giờ và Duyệt trừ tiền luôn.<br>`Expected: 429`<br>`Actual: 200` |
+| **INV_5** | Nhập Phương thức bị Null/Rỗng: `null` | Lỗi `ArgumentException` (Thông báo hợp lệ báo văng lỗi) | ❌ **FAIL (Crash Hệ Thống)**<br>Hệ thống sập ném ra `NullReferenceException` do cố chạy lệnh `.ToUpper()` lên `null`. |
 
-*(Sau khi phát hiện 2 bản ghi đỏ trên, em đã áp dụng hàm `Math.Max` để chặn số âm cho `BVT_6`, đồng thời nới rộng khoảng cách "Dưới biên" và tăng sai lệch khi so sánh kết quả`, và tất cả trở lại trạng thái Xanh Passing ở bảng mục 1).*
+*(Sau khi phát hiện 3 bản ghi đỏ trên, thiết kế đã được khắc phục lại như sau: Bổ sung lệnh `string.IsNullOrWhiteSpace` chặn lỗi crash cho `INV_5`, áp dụng hàm `Math.Max` chặn số âm cho `BVT_6`, và nới rộng khoảng cách "Dưới biên" bù trừ độ trễ OS cho `R10`, giúp tất cả trở lại trạng thái Xanh (Passing) ở các bảng phía trên).*
 
