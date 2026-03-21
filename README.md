@@ -55,21 +55,21 @@ Input được xác định là:
 
 **Bảng quyết định**
 
-| | Quy tắc / Rule | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 | R9 |
-| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Điều kiện** | **C1: Request Method hợp lệ?** | T | T | T | T | T | T | T | T | F |
-| | **C2: Loại tài khoản là `Free`?** | T | T | T | T | F | F | F | F | \- |
-| | **C3: Loại tài khoản là `Premium`?**| F | F | F | F | T | T | T | T | \- |
-| | **C4: Phương thức là `GET`?** | T | T | F | F | T | T | F | F | \- |
-| | **C5: Phương thức là `POST`?** | F | F | T | T | F | F | T | T | \- |
-| | **C6: Token dư ≥ Chi phí?** | T | F | T | F | T | F | T | F | \- |
-| **Hành động** | **A1: Hệ thống Duyệt (200 OK)** | X | | X | | X | | X | | |
-| | **A2: Gửi Từ chối (429 Too Many)** | | X | | X | | X | | X | |
-| | **A3: Số dư Token giữ nguyên** | | X | | X | | X | | X | |
-| | **A4: Trừ tài khoản 1 Token** | X | | | | X | | | | |
-| | **A5: Trừ tài khoản 2 Token** | | | | | | | X | | |
-| | **A6: Trừ tài khoản 3 Token** | | | X | | | | | | |
-| | **A7: Văng lỗi ArgumentException** | | | | | | | | | X |
+| | Quy tắc / Rule | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 | R9 | R10 |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Điều kiện** | **C1: Loại tài khoản là `Free`?** | T | T | T | T | F | F | F | F | F | \- |
+| | **C2: Loại tài khoản là `Premium`?**| F | F | F | F | T | T | T | T | F | \- |
+| | **C3: Request Method hợp lệ?** | T | T | T | T | T | T | T | T | \- | F |
+| | **C4: Phương thức là `GET`?** | T | T | F | F | T | T | F | F | \- | \- |
+| | **C5: Phương thức là `POST`?** | F | F | T | T | F | F | T | T | \- | \- |
+| | **C6: Token dư ≥ Chi phí?** | T | F | T | F | T | F | T | F | \- | \- |
+| **Hành động** | **A1: Hệ thống Duyệt (200 OK)** | X | | X | | X | | X | | | |
+| | **A2: Gửi Từ chối (429 Too Many)** | | X | | X | | X | | X | | |
+| | **A3: Số dư Token giữ nguyên** | | X | | X | | X | | X | | |
+| | **A4: Trừ tài khoản 1 Token** | X | | | | X | | | | | |
+| | **A5: Trừ tài khoản 2 Token** | | | | | | | X | | | |
+| | **A6: Trừ tài khoản 3 Token** | | | X | | | | | | | |
+| | **A7: Văng lỗi ArgumentException** | | | | | | | | | X | X |
 
 **Đặt số token về 0, kết hợp bảng quyết định và các giá trị biên**
 
