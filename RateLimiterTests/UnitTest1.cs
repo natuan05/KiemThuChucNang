@@ -88,7 +88,20 @@ public class RateLimiterTests
         }
     }
 
-    // 4. Kiểm thử đầu vào không hợp lệ (Phương thức)
+    // 4. Kiểm thử đầu vào không hợp lệ (Hạng tài khoản & Phương thức)
+    [Theory]
+    [InlineData("vip")]       // Tier không tồn tại trong danh mục
+    [InlineData("")]          // Biên chuỗi Rỗng (Length = 0)
+    [InlineData(" ")]         // Chuỗi chỉ có 1 khoảng trắng
+    [InlineData(null)]        // Cực hạn: Null object
+    [InlineData("freee")]     // Sai lỗi chính tả
+    [InlineData("123!@#")]    // Kiểu gõ linh tinh, ký tự lạ
+    public void Constructor_InvalidTier_ShouldThrowArgumentException(string invalidTier)
+    {
+        var exception = Assert.Throws<ArgumentException>(() => new TokenBucket(invalidTier));
+        Assert.Contains("Tier không hợp lệ", exception.Message);
+    }
+
     [Theory]
     [InlineData("PUT")]       
     [InlineData("DELETE")]    
@@ -96,7 +109,7 @@ public class RateLimiterTests
     [InlineData(" ")]         
     [InlineData(null)]        
     [InlineData("GETT")]      
-    [InlineData("123!@#")]    
+    [InlineData("123!@#")]
     public void CallApi_InvalidMethod_ShouldThrowArgumentException(string invalidMethod)
     {
         var bucket = new TokenBucket("free");

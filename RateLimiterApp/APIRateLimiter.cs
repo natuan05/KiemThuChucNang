@@ -14,7 +14,7 @@ public static class SystemConfig
         ["premium"] = new() { ["GET"] = 1_000, ["POST"] = 2_000 },
     };
 
-    // Chuyển ms → token (chỉ dùng khi hiển thị)
+    // Chuyển ms → số token 
     public static double MsToTokens(int ms) => ms / 1000.0;
 }
 
@@ -33,10 +33,11 @@ public class TokenBucket
 
     public TokenBucket(string tier)
     {
-        tier = tier.ToLower();
-        if (!SystemConfig.CostTableMs.ContainsKey(tier))
+        if (string.IsNullOrWhiteSpace(tier) || !SystemConfig.CostTableMs.ContainsKey(tier.ToLower()))
             throw new ArgumentException(
                 $"Tier không hợp lệ: '{tier}'. Chọn 'free' hoặc 'premium'.");
+                
+        tier = tier.ToLower();
 
         _tier           = tier;
         _tokensMs       = SystemConfig.MaxCapacityMs; // Bắt đầu đầy
