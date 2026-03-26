@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VBMifH1bQbA=",
+  "dgSpecHash": "DIRVkqZmc4k=",
   "success": true,
-  "projectFilePath": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterTests\\RateLimiterTests.csproj",
+  "projectFilePath": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterTests\\RateLimiterTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.codecoverage\\17.14.1\\microsoft.codecoverage.17.14.1.nupkg.sha512",

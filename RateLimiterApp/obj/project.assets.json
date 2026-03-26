@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterApp\\RateLimiterApp.csproj",
+      "projectUniqueName": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterApp\\RateLimiterApp.csproj",
       "projectName": "RateLimiterApp",
-      "projectPath": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterApp\\RateLimiterApp.csproj",
+      "projectPath": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterApp\\RateLimiterApp.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterApp\\obj\\",
+      "outputPath": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -935,11 +935,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterTests\\RateLimiterTests.csproj",
+      "projectUniqueName": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterTests\\RateLimiterTests.csproj",
       "projectName": "RateLimiterTests",
-      "projectPath": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterTests\\RateLimiterTests.csproj",
+      "projectPath": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterTests\\RateLimiterTests.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterTests\\obj\\",
+      "outputPath": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -954,8 +954,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterApp\\RateLimiterApp.csproj": {
-              "projectPath": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterApp\\RateLimiterApp.csproj"
+            "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterApp\\RateLimiterApp.csproj": {
+              "projectPath": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterApp\\RateLimiterApp.csproj"
             }
           }
         }

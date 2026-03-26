@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QcvWu7kwhMg=",
+  "dgSpecHash": "vGGBseBuyC4=",
   "success": true,
-  "projectFilePath": "d:\\Kiểm Thử\\KiemThuChucNang\\RateLimiterApp\\RateLimiterApp.csproj",
+  "projectFilePath": "D:\\Kiểm Thử\\APIRateLimiter\\RateLimiterApp\\RateLimiterApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
